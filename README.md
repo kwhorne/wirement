@@ -6,7 +6,7 @@ Wirement is a **bloat-free starter kit** for quickly launching **Laravel 12.x** 
 > **Filament 4** is currently in beta — use it cautiously in production.
 
 > [!NOTE]
-> Larament requires **PHP 8.3** or higher to run.
+> Wirement requires **PHP 8.3** or higher to run.
 
 ## Dependencies
 
@@ -27,7 +27,7 @@ This project includes several development dependencies to ensure code quality an
 - **[rector/rector](https://github.com/rectorphp/rector)**: Automated code refactoring tool
 - **[barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)**: A package that providing insights into queries, requests, and performance metrics during development.
 
-These tools help maintain code quality, provide testing capabilities, and improve the development experience. Larament comes with a bunch of tests to ensure everything works as expected.
+These tools help maintain code quality, provide testing capabilities, and improve the development experience. Wirement comes with a bunch of tests to ensure everything works as expected.
 
 ![Tests](resources/images/tests.png)
 
@@ -42,15 +42,11 @@ wirement comes with several pre-configured settings to enhance your development 
 - Includes a pre-configured custom theme, allowing for easy styling customization and consistent design across your admin panel
 - Profile enabled by default, allowing users to manage their profiles directly from the admin panel
 - (MFA) is enabled by default (App Authentication), providing an extra layer of security for your admin panel
-
-![Login](resources/images/login-page.png)
  
 ### Filament Table Configuration
 All Filament tables are pre-configured with:
 - **Striped Rows**: For better visual separation between rows
 - **Deferred Loading**: Improves performance by loading table data after the initial page load
-
-![Users Table](resources/images/users-table.png)
 
 ### Laravel Migration Stubs
 Wirement includes custom migration stubs that removes the `down()` method by default. The removal of the `down()` method is a debated topic in the Laravel community - while some developers prefer to keep it for rollback capabilities, others find it rarely used in practice. If you prefer to keep the `down()` method, you can simply remove these custom stubs and Laravel will use its default migration templates.
@@ -101,7 +97,7 @@ This command runs all code quality tools in sequence:
 
 ## Installation
 
-Create a new Larament project and set it up with a single command:
+Create a new wirement project and set it up with a single command:
 
 ```bash
 composer create-project kwhorne/wirement your-project-name
