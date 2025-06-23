@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9fa5d9ad8df48d56ebf7c5b2fbc4e8bc",
+    "content-hash": "1fd9535881e39184c6f895949245950f",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -511,6 +511,75 @@
             "time": "2024-07-16T11:13:48+00:00"
         },
         {
+            "name": "codewithdennis/filament-lucide-icons",
+            "version": "v4.0.0-beta.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CodeWithDennis/filament-lucide-icons.git",
+                "reference": "3f9e10de645ae0977bd086f820b53a743405c8fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CodeWithDennis/filament-lucide-icons/zipball/3f9e10de645ae0977bd086f820b53a743405c8fc",
+                "reference": "3f9e10de645ae0977bd086f820b53a743405c8fc",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^4.0",
+                "mallardduck/blade-lucide-icons": "^1.23",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.15.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.22"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "FilamentLucideIcons": "CodeWithDennis\\FilamentLucideIcons\\Facades\\FilamentLucideIcons"
+                    },
+                    "providers": [
+                        "CodeWithDennis\\FilamentLucideIcons\\FilamentLucideIconsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CodeWithDennis\\FilamentLucideIcons\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "CodeWithDennis",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Filament plugin that integrates Lucide icons, allowing you to use them seamlessly across Filament forms, tables, actions, and more.",
+            "homepage": "https://github.com/codewithdennis/filament-lucide-icons",
+            "keywords": [
+                "filamentphp",
+                "icons",
+                "laravel",
+                "lucide"
+            ],
+            "support": {
+                "issues": "https://github.com/codewithdennis/filament-lucide-icons/issues",
+                "source": "https://github.com/codewithdennis/filament-lucide-icons"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/CodeWithDennis",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-06-21T15:09:53+00:00"
+        },
+        {
             "name": "danharrin/date-format-converter",
             "version": "v0.3.1",
             "source": {
@@ -992,16 +1061,16 @@
         },
         {
             "name": "filament/actions",
-            "version": "v4.0.0-beta6",
+            "version": "v4.0.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/actions.git",
-                "reference": "fce488cd2fe412cef4192da9eed989dbbd583efb"
+                "reference": "726a8a5bebbee76cbbb2fde20610a69605a74894"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/actions/zipball/fce488cd2fe412cef4192da9eed989dbbd583efb",
-                "reference": "fce488cd2fe412cef4192da9eed989dbbd583efb",
+                "url": "https://api.github.com/repos/filamentphp/actions/zipball/726a8a5bebbee76cbbb2fde20610a69605a74894",
+                "reference": "726a8a5bebbee76cbbb2fde20610a69605a74894",
                 "shasum": ""
             },
             "require": {
@@ -1037,20 +1106,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2025-06-18T22:13:00+00:00"
+            "time": "2025-06-22T10:45:04+00:00"
         },
         {
             "name": "filament/filament",
-            "version": "v4.0.0-beta6",
+            "version": "v4.0.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/panels.git",
-                "reference": "43e4c8c7f299022abfcca3fea14c9683f6e8c1d9"
+                "reference": "d6662b5bb1514b7efe0cd37b02709887c65e665e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/panels/zipball/43e4c8c7f299022abfcca3fea14c9683f6e8c1d9",
-                "reference": "43e4c8c7f299022abfcca3fea14c9683f6e8c1d9",
+                "url": "https://api.github.com/repos/filamentphp/panels/zipball/d6662b5bb1514b7efe0cd37b02709887c65e665e",
+                "reference": "d6662b5bb1514b7efe0cd37b02709887c65e665e",
                 "shasum": ""
             },
             "require": {
@@ -1094,20 +1163,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2025-06-18T22:12:59+00:00"
+            "time": "2025-06-22T10:45:08+00:00"
         },
         {
             "name": "filament/forms",
-            "version": "v4.0.0-beta6",
+            "version": "v4.0.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/forms.git",
-                "reference": "52174eb276cd7cf6c9ec63ba7e1a6e99b2fb2dba"
+                "reference": "5a5560bce5212c209299bdb38ed069e0121389ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/forms/zipball/52174eb276cd7cf6c9ec63ba7e1a6e99b2fb2dba",
-                "reference": "52174eb276cd7cf6c9ec63ba7e1a6e99b2fb2dba",
+                "url": "https://api.github.com/repos/filamentphp/forms/zipball/5a5560bce5212c209299bdb38ed069e0121389ba",
+                "reference": "5a5560bce5212c209299bdb38ed069e0121389ba",
                 "shasum": ""
             },
             "require": {
@@ -1144,11 +1213,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2025-06-18T22:12:58+00:00"
+            "time": "2025-06-22T10:45:07+00:00"
         },
         {
             "name": "filament/infolists",
-            "version": "v4.0.0-beta6",
+            "version": "v4.0.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/infolists.git",
@@ -1194,7 +1263,7 @@
         },
         {
             "name": "filament/notifications",
-            "version": "v4.0.0-beta6",
+            "version": "v4.0.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/notifications.git",
@@ -1241,16 +1310,16 @@
         },
         {
             "name": "filament/schemas",
-            "version": "v4.0.0-beta6",
+            "version": "v4.0.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/schemas.git",
-                "reference": "ccac476739e6f8a7bf2f335e5ced9c21f086dff1"
+                "reference": "2906767478587745db5719bbeeb000d4bd93c2fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/schemas/zipball/ccac476739e6f8a7bf2f335e5ced9c21f086dff1",
-                "reference": "ccac476739e6f8a7bf2f335e5ced9c21f086dff1",
+                "url": "https://api.github.com/repos/filamentphp/schemas/zipball/2906767478587745db5719bbeeb000d4bd93c2fc",
+                "reference": "2906767478587745db5719bbeeb000d4bd93c2fc",
                 "shasum": ""
             },
             "require": {
@@ -1282,11 +1351,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2025-06-18T22:12:56+00:00"
+            "time": "2025-06-22T10:45:05+00:00"
         },
         {
             "name": "filament/support",
-            "version": "v4.0.0-beta6",
+            "version": "v4.0.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/support.git",
@@ -1344,16 +1413,16 @@
         },
         {
             "name": "filament/tables",
-            "version": "v4.0.0-beta6",
+            "version": "v4.0.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/tables.git",
-                "reference": "fec658be3b7e737ca6a4aca39c265571611e21d2"
+                "reference": "ad872446086b8d4f3fc7706924a83e0dc18810a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/tables/zipball/fec658be3b7e737ca6a4aca39c265571611e21d2",
-                "reference": "fec658be3b7e737ca6a4aca39c265571611e21d2",
+                "url": "https://api.github.com/repos/filamentphp/tables/zipball/ad872446086b8d4f3fc7706924a83e0dc18810a9",
+                "reference": "ad872446086b8d4f3fc7706924a83e0dc18810a9",
                 "shasum": ""
             },
             "require": {
@@ -1385,20 +1454,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2025-06-18T22:12:57+00:00"
+            "time": "2025-06-22T10:45:07+00:00"
         },
         {
             "name": "filament/widgets",
-            "version": "v4.0.0-beta6",
+            "version": "v4.0.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/widgets.git",
-                "reference": "8cf3ca8259b33786cc666a2fa76d3bf6cafdc59e"
+                "reference": "9c5b74f01ef852cdf8879a24c6792ec11411a01f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/widgets/zipball/8cf3ca8259b33786cc666a2fa76d3bf6cafdc59e",
-                "reference": "8cf3ca8259b33786cc666a2fa76d3bf6cafdc59e",
+                "url": "https://api.github.com/repos/filamentphp/widgets/zipball/9c5b74f01ef852cdf8879a24c6792ec11411a01f",
+                "reference": "9c5b74f01ef852cdf8879a24c6792ec11411a01f",
                 "shasum": ""
             },
             "require": {
@@ -1429,7 +1498,7 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2025-06-18T22:13:12+00:00"
+            "time": "2025-06-22T10:45:03+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -3360,6 +3429,66 @@
             "time": "2025-04-12T22:26:52+00:00"
         },
         {
+            "name": "mallardduck/blade-lucide-icons",
+            "version": "1.23.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mallardduck/blade-lucide-icons.git",
+                "reference": "19081819bb527e15eed22f6528b9d059c1a8df8b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mallardduck/blade-lucide-icons/zipball/19081819bb527e15eed22f6528b9d059c1a8df8b",
+                "reference": "19081819bb527e15eed22f6528b9d059c1a8df8b",
+                "shasum": ""
+            },
+            "require": {
+                "blade-ui-kit/blade-icons": "^1.6",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "ext-dom": "*",
+                "ext-fileinfo": "*",
+                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0",
+                "phpunit/phpunit": "^9.0|^10.5|^11.0",
+                "spatie/phpunit-snapshot-assertions": "^4.2.14"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MallardDuck\\LucideIcons\\BladeLucideIconsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MallardDuck\\LucideIcons\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dan Pock"
+                }
+            ],
+            "description": "A package to easily make use of Lucide icons in your Laravel Blade views.",
+            "homepage": "https://github.com/mallardduck/blade-lucide-icons",
+            "keywords": [
+                "LucideIcons",
+                "blade",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/mallardduck/blade-lucide-icons/issues",
+                "source": "https://github.com/mallardduck/blade-lucide-icons/tree/1.23.0"
+            },
+            "time": "2024-07-22T15:40:39+00:00"
+        },
+        {
             "name": "masterminds/html5",
             "version": "2.9.0",
             "source": {
@@ -3531,16 +3660,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "3.10.0",
+            "version": "3.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon.git",
-                "reference": "c1397390dd0a7e0f11660f0ae20f753d88c1f3d9"
+                "reference": "1fd1935b2d90aef2f093c5e35f7ae1257c448d00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/c1397390dd0a7e0f11660f0ae20f753d88c1f3d9",
-                "reference": "c1397390dd0a7e0f11660f0ae20f753d88c1f3d9",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/1fd1935b2d90aef2f093c5e35f7ae1257c448d00",
+                "reference": "1fd1935b2d90aef2f093c5e35f7ae1257c448d00",
                 "shasum": ""
             },
             "require": {
@@ -3632,7 +3761,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-12T10:24:28+00:00"
+            "time": "2025-06-21T15:19:35+00:00"
         },
         {
             "name": "nette/php-generator",
@@ -4896,16 +5025,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.12.8",
+            "version": "v0.12.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "85057ceedee50c49d4f6ecaff73ee96adb3b3625"
+                "reference": "1b801844becfe648985372cb4b12ad6840245ace"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/85057ceedee50c49d4f6ecaff73ee96adb3b3625",
-                "reference": "85057ceedee50c49d4f6ecaff73ee96adb3b3625",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/1b801844becfe648985372cb4b12ad6840245ace",
+                "reference": "1b801844becfe648985372cb4b12ad6840245ace",
                 "shasum": ""
             },
             "require": {
@@ -4969,9 +5098,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.12.8"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.12.9"
             },
-            "time": "2025-03-16T03:05:19+00:00"
+            "time": "2025-06-23T02:35:06+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -8734,16 +8863,16 @@
         },
         {
             "name": "larastan/larastan",
-            "version": "v3.4.2",
+            "version": "v3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/larastan/larastan.git",
-                "reference": "36706736a0c51d3337478fab9c919d78d2e03404"
+                "reference": "e8ccd73008487ba91da9877b373f8c447743f1ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/larastan/larastan/zipball/36706736a0c51d3337478fab9c919d78d2e03404",
-                "reference": "36706736a0c51d3337478fab9c919d78d2e03404",
+                "url": "https://api.github.com/repos/larastan/larastan/zipball/e8ccd73008487ba91da9877b373f8c447743f1ce",
+                "reference": "e8ccd73008487ba91da9877b373f8c447743f1ce",
                 "shasum": ""
             },
             "require": {
@@ -8811,7 +8940,7 @@
             ],
             "support": {
                 "issues": "https://github.com/larastan/larastan/issues",
-                "source": "https://github.com/larastan/larastan/tree/v3.4.2"
+                "source": "https://github.com/larastan/larastan/tree/v3.5.0"
             },
             "funding": [
                 {
@@ -8819,7 +8948,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-06-10T09:34:58+00:00"
+            "time": "2025-06-19T22:41:50+00:00"
         },
         {
             "name": "laravel/pail",
@@ -11937,7 +12066,9 @@
     ],
     "aliases": [],
     "minimum-stability": "beta",
-    "stability-flags": {},
+    "stability-flags": {
+        "codewithdennis/filament-lucide-icons": 10
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
