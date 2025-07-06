@@ -1,30 +1,82 @@
-# Guidelines
+# Wirement Development Guidelines
+
 ## Stack
-Laravel v12 https://laravel.com/docs
 
-Flux UI v2 https://fluxui.dev/docs
-- Vi skal i all hovedsak benytte komponenter med Flux UI.
+### Laravel v12
+- **Dokumentasjon:** https://laravel.com/docs
+- **Fokus:** Moderne PHP-utvikling med clean architecture
+- **Krav:** PHP 8.3+ for optimal ytelse
 
-Filament v4 https://filamentphp.com
-Dokumentasjon: https://filamentphp.com/docs/4.x
-- Vi skal holde oss til stanarder for Filamentphp der funksjonalitet ligger innenfor et Filament panel.
+### FluxUI v2
+- **Dokumentasjon:** https://fluxui.dev/docs
+- **Lisens:** Krever kommersiell lisens for forretningsbruk
+- **Fokus:** Apple-inspirert design og moderne UI-komponenter
+- **Bruk:** Primær frontend-komponentbibliotek
 
-Lucide-ikoner
-Vi elsker Heroicons, men vi erkjenner at det er et ganske begrenset ikonsett. Hvis du trenger flere ikoner, anbefaler vi å bruke Lucide i stedet.
-For å gjøre det enkelt å bruke Lucide-ikoner, tilbyr Flux en praktisk Artisan-kommando for å importere dem til prosjektet ditt:
+### Filament v4
+- **Dokumentasjon:** https://filamentphp.com/docs/4.x
+- **Fokus:** Moderne admin panels med TALL stack
+- **Krav:** Laravel 11+, Livewire 3+
+- **Bruk:** Admin interface og rapid prototyping
 
-`
-php artisan flux:icon
-`
+### Tailwind CSS v4
+- **Dokumentasjon:** https://tailwindcss.com/docs
+- **Fokus:** Utility-first CSS med OKLCH farger
+- **Bruk:** Styling foundation for alle komponenter
 
-Denne kommandoen vil be deg velge hvilke ikoner du ønsker å importere. Du kan også manuelt spesifisere ikonene du vil importere ved å oppgi navnene deres som argumenter til kommandoen:
+## Wirement Development Principles
 
-`
+### Starter Pack Philosophy
+- **Minimal & Clean:** Bare essensielle komponenter inkludert
+- **Skalerbar:** Bygget for å vokse med prosjektet
+- **Best Practices:** Følger Laravel og moderne web-standarder
+- **Developer Experience:** Fokus på rask utvikling og enkelt vedlikehold
+
+### Code Quality
+- **Automated Testing:** Pest framework for unit og feature tests
+- **Code Style:** Laravel Pint for konsistent formatering
+- **Static Analysis:** PHPStan for type-sikkerhet
+- **Performance:** Optimalisert for produksjon fra dag én
+
+### Development Workflow
+```bash
+# Kjør alle kvalitetskontroller
+composer review
+
+# Individuell testing
+composer test     # Pest tests
+composer format   # Laravel Pint
+composer analyse  # PHPStan
+```
+
+### Configuration Management
+- **Environment:** Separate configs for dev/staging/prod
+- **Secrets:** Bruk .env for sensitive data
+- **Caching:** Optimalisert cache-strategi
+- **Logging:** Strukturert logging for debugging
+
+## Ikoner
+
+### Heroicons (Standard)
+- **Bruk:** Filament admin panels (kun Heroicons støttes)
+- **Tilgjengelighet:** Begrenset sett, men godt integrert
+- **Dokumentasjon:** https://heroicons.com/
+
+### Lucide Icons (Utvidet)
+- **Bruk:** FluxUI komponenter og frontend
+- **Tilgjengelighet:** Omfattende ikonsett med 1000+ ikoner
+- **Import:** Bruk FluxUI sin Artisan-kommando
+
+```bash
+# Importer spesifikke ikoner
 php artisan flux:icon crown grip-vertical github
-`
-Lucide-ikoner Filament v4 example:
-```php
 
+# Interaktiv import
+php artisan flux:icon
+```
+
+### Filament Lucide Integration
+```php
 use CodeWithDennis\FilamentLucideIcons\Enums\LucideIcon;
 
 public static function configure(Schema $schema): Schema
@@ -34,21 +86,57 @@ public static function configure(Schema $schema): Schema
             Forms\Components\TextInput::make('email')
                 ->prefixIcon(LucideIcon::Mail)
                 ->email()
-                ->required();
+                ->required()
         ]);
 }
 ```
 
-## Design
-Fokuser på layout, luft (spacing), typografi og estetikk — ikke plassholderinnhold. Bruk en 2-kolonne-struktur der det er hensiktsmessig, med konsekvent visuell rytme, myke skygger og store berøringsflater. Hver skjerm skal føles gjennomarbeidet og intensjonell, med en følelse av å være en native app.
+## Design Philosophy
 
-UI-stil:
-• Rolig, Apple-lignende estetikk med subtile graderinger eller skygger
-• Fargepalett: nøytral bakgrunn (#F9FAFB eller lignende), mørk tekst (#1A1A1A), elegant aksentfarge (dyp indigo eller skogsgrønn)
-• Typografi: Bruk Inter eller SF Pro, fete overskrifter (24–32 px), mellomstore etiketter, fin sekundærtekst
-• Luft: Raus polstring (24–40 px), jevn vertikal rytme
-• Kortkomponenter: Avrundede hjørner (2xl), hover-skygger, lette skillelinjer innvendig
-• Ikoner: Lucide- eller Feather-stil linjeikoner, rene og konsistente
+Wirement følger en moderne, minimalistisk designfilosofi inspirert av Apple's Human Interface Guidelines.
+
+### Designprinsipper
+- **Klarhet:** Innhold og funksjonalitet prioriteres over dekorasjon
+- **Konsistens:** Samme mønstre og komponenter brukes gjennomgående
+- **Hierarki:** Tydelig visuell hierarki med spacing og typografi
+- **Tilgjengelighet:** WCAG 2.1 AA compliance som minimum
+
+### Visuell Stil
+- **Estetikk:** Rolig, Apple-lignende med subtile graderinger
+- **Layout:** 2-kolonne struktur der hensiktsmessig
+- **Rytme:** Konsekvent vertikal rytme og spacing
+- **Berøringsflater:** Store, tilgjengelige interactive elementer
+
+### Fargepalett
+```css
+/* Nøytrale farger */
+--background: #F9FAFB;    /* Lys bakgrunn */
+--text-primary: #1A1A1A;  /* Mørk tekst */
+--text-secondary: #6B7280; /* Sekundær tekst */
+
+/* Aksentfarger */
+--accent-primary: #4F46E5;   /* Dyp indigo */
+--accent-secondary: #059669; /* Skogsgrønn */
+```
+
+### Typografi
+- **Font:** Inter eller SF Pro
+- **Overskrifter:** Bold, 24-32px
+- **Brødtekst:** Medium weight, 16px
+- **Sekundærtekst:** Regular, 14px
+- **Line-height:** 1.5-1.6 for optimal lesbarhet
+
+### Spacing & Layout
+- **Polstring:** 24-40px for rause mellomrom
+- **Komponenter:** 2xl border-radius (16px)
+- **Skygger:** Subtile hover-effects
+- **Skillelinjer:** Lette, diskrete separatorer
+
+### Komponenter
+- **Kort:** Avrundede hjørner med subtile skygger
+- **Knapper:** Tydelige call-to-action med hover-states
+- **Ikoner:** Lucide line-style for konsistens
+- **Inputs:** Rene former med fokus på brukervennlighet
 
 
 # Filament PHP v3 til v4 - Viktigste forskjeller
@@ -186,10 +274,10 @@ composer remove filament/upgrade
 
 ## ⚠️ Viktige merknader
 
-### Beta-status
-- **Filament v4 er for øyeblikket i beta og er ikke stabil**
-- Breaking changes kan bli introdusert i utgivelser under beta-perioden
-- Anbefales å vente til stabil utgivelse for produksjonsapplikasjoner
+### Produksjonsstatus
+- **Filament v4 er nå stabil** og produksjonsklar
+- Regelmessige oppdateringer og sikkerhetsforbedringer
+- Anbefales for nye prosjekter og produksjonsapplikasjoner
 
 ### Plugin-kompatibilitet
 - Noen plugins du bruker er kanskje ikke tilgjengelige i v4 ennå
