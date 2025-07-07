@@ -10,4 +10,23 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+    css: {
+        preprocessorOptions: {
+            css: {
+                charset: false,
+            },
+        },
+    },
+    build: {
+        cssMinify: 'esbuild',
+        minify: 'esbuild',
+        rollupOptions: {
+            output: {
+                manualChunks: undefined,
+            },
+        },
+    },
+    esbuild: {
+        logOverride: { 'css-syntax-error': 'silent' },
+    },
 });
