@@ -1,4 +1,49 @@
 <laravel-boost-guidelines>
+=== foundation rules ===
+
+# Laravel Boost Guidelines
+
+The Laravel Boost guidelines are specifically curated by Laravel maintainers for this application. These guidelines should be followed closely to enhance the user's satisfaction building Laravel applications.
+
+## Foundational Context
+This application is a Laravel application and its main Laravel ecosystems package & versions are below. You are an expert with them all. Ensure you abide by these specific packages & versions.
+
+- php - 8.3.20
+- filament/filament (FILAMENT) - v4
+- laravel/framework (LARAVEL) - v12
+- laravel/prompts (PROMPTS) - v0
+- livewire/flux (FLUXUI_FREE) - v2
+- livewire/flux-pro (FLUXUI_PRO) - v2
+- livewire/livewire (LIVEWIRE) - v3
+- larastan/larastan (LARASTAN) - v3
+- laravel/pint (PINT) - v1
+- pestphp/pest (PEST) - v3
+- rector/rector (RECTOR) - v2
+- tailwindcss (TAILWINDCSS) - v4
+
+
+## Conventions
+- You must follow all existing code conventions used in this application. When creating or editing a file, check sibling files for the correct structure, approach, naming.
+- Use descriptive names for variables and methods. For example, `isRegisteredForDiscounts`, not `discount()`.
+- Check for existing components to reuse before writing a new one.
+
+## Verification Scripts
+- Do not create verification scripts or tinker when tests cover that functionality and prove it works. Unit and feature tests are more important.
+
+## Application Structure & Architecture
+- Stick to existing directory structure - don't create new base folders without approval.
+- Do not change the application's dependencies without approval.
+
+## Frontend Bundling
+- If the user doesn't see a frontend change reflected in the UI, it could mean they need to run `npm run build`, `npm run dev`, or `composer run dev`. Ask them.
+
+## Replies
+- Be concise in your explanations - focus on what's important rather than explaining obvious details.
+
+## Documentation Files
+- You must only create documentation files if explicitly requested by the user.
+
+
 === boost rules ===
 
 ## Laravel Boost
@@ -24,6 +69,7 @@
 - You must use this tool to search for Laravel-ecosystem documentation before falling back to other approaches.
 - Search the documentation before making code changes to ensure we are taking the correct approach.
 - Use multiple, broad, simple, topic based queries to start. For example: `['rate limiting', 'routing rate limiting', 'routing']`.
+- Do not add package names to queries - package information is already shared. For example, use `test resource table`, not `filament 4 test resource table`.
 
 ### Available Search Syntax
 - You can and should pass multiple queries at once. The most relevant results will be returned first.
@@ -33,6 +79,39 @@
 3. Quoted Phrases (Exact Position) - query="infinite scroll" - Words must be adjacent and in that order
 4. Mixed Queries - query=middleware "rate limit" - "middleware" AND exact phrase "rate limit"
 5. Multiple Queries - queries=["authentication", "middleware"] - ANY of these terms
+
+
+=== php rules ===
+
+## PHP
+
+- Always use strict typing at the head of a `.php` file: `declare(strict_types=1);`.
+- Always use curly braces for control structures, even if it has one line.
+
+### Constructors
+- Use PHP 8 constructor property promotion in `__construct()`.
+    - <code-snippet>public function __construct(public GitHub $github) { }</code-snippet>
+- Do not allow empty `__construct()` methods with zero parameters.
+
+### Type Declarations
+- Always use explicit return type declarations for methods and functions.
+- Use appropriate PHP type hints for method parameters.
+
+<code-snippet name="Explicit Return Types and Method Params" lang="php">
+protected function isAccessible(User $user, ?string $path = null): bool
+{
+    ...
+}
+</code-snippet>
+
+## Comments
+- Prefer PHPDoc blocks over comments. Never use comments within the code itself unless there is something _very_ complex going on.
+
+## PHPDoc Blocks
+- Add useful array shape type definitions for arrays when appropriate.
+
+## Enums
+- Typically, keys in an Enum should be TitleCase. For example: `FavoritePerson`, `BestLake`, `Monthly`.
 
 
 === herd rules ===
@@ -49,6 +128,7 @@
 - Filament is used by this application, check how and where to follow existing application conventions.
 - Filament is a Server-Driven UI (SDUI) framework for Laravel. It allows developers to define user interfaces in PHP using structured configuration objects. It is built on top of Livewire, Alpine.js, and Tailwind CSS.
 - You can use the `search-docs` tool to get information from the official Filament documentation when needed. This is very useful for Artisan command arguments, specific code examples, testing functionality, relationship management, and ensuring you're following idiomatic practices.
+- Utilize static `make()` methods for consistent component initialization.
 
 ### Artisan
 - You must use the Filament specific Artisan commands to create new files or components for Filament. You can find these with the `list-artisan-commands` tool, or with `php artisan` and the `--help` option.
@@ -76,7 +156,7 @@ Forms\Components\Select::make('user_id')
 </code-snippet>
 
 
-### Testing
+## Testing
 - It's important to test Filament functionality for user satisfaction.
 - Ensure that you are authenticated to access the application within the test.
 - Filament uses Livewire, so start assertions with `livewire()` or `Livewire::test()`.
@@ -138,6 +218,12 @@ Forms\Components\Select::make('user_id')
 - The `Form` & `Infolist` layout components have been moved to `Filament\Schemas\Components`, for example `Grid`, `Section`, `Fieldset`, `Tabs`, `Wizard`, etc.
 - A new `Repeater` component for Forms has been added.
 - Icons now use the `Filament\Support\Icons\Heroicon` Enum by default. Other options are available and documented.
+
+### Organize Component Classes Structure
+- Schema components: `Schemas/Components/`
+- Table columns: `Tables/Columns/`
+- Table filters: `Tables/Filters/`
+- Actions: `Actions/`
 
 
 === laravel/core rules ===
@@ -218,11 +304,11 @@ Forms\Components\Select::make('user_id')
 - Fallback to standard Blade components if Flux is unavailable.
 - If available, use Laravel Boost's `search-docs` tool to get the exact documentation and code snippets available for this project.
 - Flux UI components look like this:
+
 <code-snippet name="Flux UI Component Usage Example" lang="blade">
-    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none h-10 text-sm rounded-lg w-10 inline-flex  bg-[var(--color-accent)] hover:bg-[color-mix(in_oklab,_var(--color-accent),_transparent_10%)] text-[var(--color-accent-foreground)] border border-black/10 dark:border-0 shadow-[inset_0px_1px_--theme(--color-white/.2)] [[data-flux-button-group]_&amp;]:border-e-0 [:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-[1px] dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-0 dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-s-[1px] [:is([data-flux-button-group]&gt;&amp;:not(:first-child),_[data-flux-button-group]_:not(:first-child)&gt;&amp;)]:border-s-[color-mix(in_srgb,var(--color-accent-foreground),transparent_85%)]" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target">
-        
-    </button>
+    <flux:button variant="primary"/>
 </code-snippet>
+
 
 ### Available Components
 This is correct as of Boost installation, but there may be additional components within the codebase.
@@ -242,11 +328,11 @@ avatar, badge, brand, breadcrumbs, button, callout, checkbox, dropdown, field, h
 - Fallback to standard Blade components if Flux is unavailable.
 - If available, use Laravel Boost's `search-docs` tool to get the exact documentation and code snippets available for this project.
 - Flux UI components look like this:
+
 <code-snippet name="Flux UI component usage example" lang="blade">
-    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none h-10 text-sm rounded-lg w-10 inline-flex  bg-[var(--color-accent)] hover:bg-[color-mix(in_oklab,_var(--color-accent),_transparent_10%)] text-[var(--color-accent-foreground)] border border-black/10 dark:border-0 shadow-[inset_0px_1px_--theme(--color-white/.2)] [[data-flux-button-group]_&amp;]:border-e-0 [:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-[1px] dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-0 dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-s-[1px] [:is([data-flux-button-group]&gt;&amp;:not(:first-child),_[data-flux-button-group]_:not(:first-child)&gt;&amp;)]:border-s-[color-mix(in_srgb,var(--color-accent-foreground),transparent_85%)]" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target">
-        
-    </button>
+    <flux:button variant="primary"/>
 </code-snippet>
+
 
 ### Available Components
 This is correct as of Boost installation, but there may be additional components within the codebase.
@@ -260,7 +346,7 @@ accordion, autocomplete, avatar, badge, brand, breadcrumbs, button, calendar, ca
 
 ## Livewire Core
 - Use the `search-docs` tool to find exact version specific documentation for how to write Livewire & Livewire tests.
-- Use the `php artisan make:livewire [Posts\\CreatePost]` artisan command to create new components
+- Use the `php artisan make:livewire [Posts\CreatePost]` artisan command to create new components
 - State should live on the server, with the UI reflecting it.
 - All Livewire requests hit the Laravel backend, they're like regular HTTP requests. Always validate form data, and run authorization checks in Livewire actions.
 
@@ -459,4 +545,12 @@ it('has emails', function (string $email) {
 | overflow-ellipsis | text-ellipsis |
 | decoration-slice | box-decoration-slice |
 | decoration-clone | box-decoration-clone |
+
+
+=== tests rules ===
+
+## Test Enforcement
+
+- Every change must be programmatically tested. Write a new test or update an existing test, then run the affected tests to make sure they pass.
+- Run the minimum number of tests needed to ensure code quality and speed. Use `php artisan test` with a specific filename or filter.
 </laravel-boost-guidelines>
